@@ -1,0 +1,14 @@
+langchain==1.2.1
+langchain-openai==1.1.6
+langgraph-checkpoint-postgres==3.0.2
+langchain-mcp-adapters==0.2.1
+mcp==1.25.0
+pymilvus==2.6.6
+fastapi==0.115.14
+uvicorn==0.34.0
+requests==2.32.5
+psycopg[binary]>=3.2.13,<3.3
+psycopg-pool>=3.2.8,<3.3
+concurrent-log-handler==0.9.28
+tqdm==4.67.1
+pytest==7.4.4

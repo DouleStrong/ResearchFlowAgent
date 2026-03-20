@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchFlowAgent UI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-grain"></div>
+    <div class="app-shell">
+      <aside class="control-panel">
+        <div class="brand-block">
+          <div class="brand-mark">RF</div>
+          <p class="eyebrow">Portfolio Build</p>
+          <h1>ResearchFlowAgent</h1>
+          <p class="brand-copy">
+            一个能真正演示“任务理解、流式生成、检索审批、结构化输出”的研究型 AI Agent 全栈作品。
+          </p>
+        </div>
+
+        <section class="panel-card session-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Session Control</p>
+              <h2>会话设置</h2>
+            </div>
+            <button id="refresh-thread" type="button" class="ghost-button">重置线程</button>
+          </div>
+          <label class="field">
+            <span>用户 ID</span>
+            <input id="user-id" name="user_id" type="text" value="user_001" />
+          </label>
+          <label class="field">
+            <span>线程 ID</span>
+            <input id="thread-id" name="thread_id" type="text" />
+          </label>
+          <div class="status-strip">
+            <span class="status-label">当前状态</span>
+            <span id="status-badge" class="status-badge status-idle">待命中</span>
+          </div>
+          <div class="trace-strip">
+            <span class="trace-label">Trace ID</span>
+            <span id="trace-id" class="trace-value">尚未开始</span>
+          </div>
+        </section>
+
+        <section class="panel-card prompt-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Starter Briefs</p>
+              <h2>推荐提问</h2>
+            </div>
+          </div>
+          <div class="chip-group">
+            <button type="button" class="chip" data-question="请研究 AI Coding Agent 在中小团队研发流程中的典型应用场景，并给出一份面向技术负责人的选型建议。">AI Coding Agent 选型</button>
+            <button type="button" class="chip" data-question="请分析 MCP 在企业级 Agent 系统中的价值、落地方式与实施风险。">MCP 落地研究</button>
+            <button type="button" class="chip" data-question="请比较 Cursor、Claude Code、Codex CLI 在研发团队中的协作价值，并形成结构化建议。">工具对比研究</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="hero-card">
+          <div class="hero-glow hero-glow-a"></div>
+          <div class="hero-glow hero-glow-b"></div>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Research Operations Console</p>
+              <h2>从自然语言需求，到可审计的研究报告交付</h2>
+              <p>
+                这不是普通聊天页面，而是一套能展示 Agent 规划、RAG 检索、人工审批与结构化结果输出的完整全栈工作台。
+              </p>
+              <div class="hero-callouts">
+                <span class="callout">SSE Streaming</span>
+                <span class="callout">Human-in-the-Loop</span>
+                <span class="callout">RAG + MCP</span>
+                <span class="callout">Structured Report</span>
+              </div>
+            </div>
+
+            <div class="hero-aside">
+              <section class="stage-card">
+                <p class="section-kicker">Execution Pulse</p>
+                <h3 id="hero-stage">Ready For Research Brief</h3>
+                <p id="hero-stage-copy">
+                  提交任务后，这里会实时展示规划、检索、审批和完成阶段。
+                </p>
+              </section>
+
+              <div class="hero-metrics">
+                <article class="metric-card">
+                  <span class="metric-label">Tokens</span>
+                  <strong id="metric-token-count" class="metric-value">0</strong>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Events</span>
+                  <strong id="metric-event-count" class="metric-value">0</strong>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Sources</span>
+                  <strong id="metric-source-count" class="metric-value">0</strong>
+                </article>
+                <article class="metric-card">
+                  <span class="metric-label">Interrupts</span>
+                  <strong id="metric-interrupt-count" class="metric-value">0</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="capability-grid">
+          <article class="capability-card">
+            <p class="section-kicker">Capability 01</p>
+            <h3>研究型工作流</h3>
+            <p>先理解任务，再形成提纲、检索资料、组织结论，让复杂问题有清晰的执行路径。</p>
+          </article>
+          <article class="capability-card">
+            <p class="section-kicker">Capability 02</p>
+            <h3>人工审批机制</h3>
+            <p>关键检索工具不会直接自动执行，而是通过浏览器端审批面板确认后再继续。</p>
+          </article>
+          <article class="capability-card">
+            <p class="section-kicker">Capability 03</p>
+            <h3>前后端一体化演示</h3>
+            <p>页面可直接展示 SSE 输出、状态变迁、来源追踪和结构化报告，适合作品集场景。</p>
+          </article>
+        </section>
+
+        <section class="panel-card narrative-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Workflow Story</p>
+              <h2>这套系统如何完成一次研究任务</h2>
+            </div>
+          </div>
+          <ol class="workflow-list">
+            <li class="workflow-item">
+              <span class="workflow-index">01</span>
+              <div class="workflow-body">
+                <h3>理解用户任务</h3>
+                <p>将自然语言需求转成研究目标、受众和输出要求。</p>
+              </div>
+            </li>
+            <li class="workflow-item">
+              <span class="workflow-index">02</span>
+              <div class="workflow-body">
+                <h3>生成提纲与检索策略</h3>
+                <p>先规划后检索，让资料搜集和分析过程更可控。</p>
+              </div>
+            </li>
+            <li class="workflow-item">
+              <span class="workflow-index">03</span>
+              <div class="workflow-body">
+                <h3>触发审批与续跑</h3>
+                <p>对高风险工具调用进行人工确认，再从中断点继续执行。</p>
+              </div>
+            </li>
+            <li class="workflow-item">
+              <span class="workflow-index">04</span>
+              <div class="workflow-body">
+                <h3>输出结构化研究结果</h3>
+                <p>最终生成带来源与下一步建议的研究报告，方便业务落地和继续扩展。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="panel-card composer-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Research Brief</p>
+              <h2>提交一个值得展示的研究任务</h2>
+            </div>
+          </div>
+          <form id="research-form">
+            <label class="field">
+              <span>研究任务</span>
+              <textarea
+                id="question-input"
+                name="question"
+                rows="5"
+                placeholder="例如：请研究企业内部知识库 Agent 的实现路径，并给出分阶段落地建议。"
+              ></textarea>
+            </label>
+            <div class="composer-actions">
+              <button id="submit-button" type="submit" class="primary-button">开始研究</button>
+              <button id="clear-button" type="button" class="ghost-button">清空结果</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="workspace-grid">
+          <section class="panel-card output-card">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Live Narrative</p>
+                <h2>实时输出</h2>
+              </div>
+              <span id="result-meta" class="panel-meta">等待任务开始</span>
+            </div>
+            <pre id="result-output" class="result-output"></pre>
+          </section>
+
+          <section id="interrupt-panel" class="panel-card interrupt-panel hidden">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Human Review</p>
+                <h2>人工审批</h2>
+              </div>
+              <span class="panel-meta">检测到需要人工确认的工具调用</span>
+            </div>
+            <form id="interrupt-form">
+              <div id="action-requests" class="action-requests"></div>
+              <div class="composer-actions">
+                <button id="resume-button" type="submit" class="primary-button">提交审批并继续</button>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <section class="workspace-grid secondary-grid">
+          <section class="panel-card sources-card">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Provenance</p>
+                <h2>参考来源</h2>
+              </div>
+              <span class="panel-meta">最终完成后自动整理</span>
+            </div>
+            <div id="sources-list" class="sources-list empty-state">当前还没有来源数据</div>
+          </section>
+
+          <section class="panel-card event-card">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Telemetry</p>
+                <h2>事件轨迹</h2>
+              </div>
+              <span class="panel-meta">流式 token / 工具输出 / 审批状态</span>
+            </div>
+            <div id="event-log" class="event-log empty-state">等待执行事件</div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

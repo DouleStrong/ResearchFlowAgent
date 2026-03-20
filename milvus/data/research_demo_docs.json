@@ -1,0 +1,50 @@
+[
+  {
+    "docId": "researchflow-001",
+    "title": "Claude Code 与 Cursor 的使用场景比较",
+    "link": "https://example.com/claude-code-vs-cursor",
+    "pubDate": "2026.03.18 10:00:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "Claude Code 更适合终端协作、代码库导航和多文件上下文理解，适用于需要在 shell、编辑与验证之间高频切换的开发流程。Cursor 更适合 IDE 内联补全、局部重写和可视化编辑，适合希望在编辑器里完成多数开发动作的个人开发者或前端工程师。"
+  },
+  {
+    "docId": "researchflow-002",
+    "title": "GitHub Copilot 在团队研发中的优势与边界",
+    "link": "https://example.com/copilot-team-dev",
+    "pubDate": "2026.03.18 10:05:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "GitHub Copilot 的优势在于补全速度快、上手门槛低、与常见 IDE 集成成熟，适合大规模团队统一铺开。它在模板化代码、重复性改造和单文件建议上表现稳定，但在跨模块重构、复杂调试和基于仓库历史进行深度分析时，往往需要更强的 Agent 工具来配合。"
+  },
+  {
+    "docId": "researchflow-003",
+    "title": "LangChain、AutoGen、CrewAI 的能力定位",
+    "link": "https://example.com/agent-framework-comparison",
+    "pubDate": "2026.03.18 10:10:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "LangChain 更强调组件化能力和与 LangGraph 配合后的可控工作流，适合需要工具调用、结构化输出和状态管理的项目。AutoGen 更偏向多智能体对话协作实验，适合研究协作式 Agent 模式。CrewAI 更偏向角色编排和面向业务流程的上手体验，适合快速拼装任务型 Agent 原型。"
+  },
+  {
+    "docId": "researchflow-004",
+    "title": "MCP 在 AI Agent 生态中的价值",
+    "link": "https://example.com/mcp-agent-ecosystem",
+    "pubDate": "2026.03.18 10:15:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "MCP 的核心价值是把外部工具、资源和上下文访问能力封装成统一协议，让模型在调用不同能力时有更标准的接口。对于 Agent 项目来说，MCP 可以降低工具接入成本，提升跨服务组合能力，也更方便把知识检索、内部 API 与自动化系统统一暴露给模型。"
+  },
+  {
+    "docId": "researchflow-005",
+    "title": "RAG 项目中来源回溯为什么重要",
+    "link": "https://example.com/rag-source-grounding",
+    "pubDate": "2026.03.18 10:20:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "来源回溯能让用户知道结论依据来自哪里，降低幻觉回答带来的信任问题。对于求职展示型项目，来源回溯尤其重要，因为它不仅说明系统做了检索增强，还能体现工程上对可解释性和结果质量的关注。面试中这往往比单纯回答流畅更有说服力。"
+  },
+  {
+    "docId": "researchflow-006",
+    "title": "如何评估 AI Coding 工具的真实使用价值",
+    "link": "https://example.com/ai-coding-evaluation",
+    "pubDate": "2026.03.18 10:25:00",
+    "pubAuthor": "ResearchFlow",
+    "content": "评估 AI Coding 工具不能只看单次生成是否惊艳，更要看首字延迟、复杂任务成功率、跨文件改动稳定性、可验证性以及是否方便纳入团队工作流。对实习生项目来说，若能展示工具调用成功率、结构化输出和引用来源，通常比堆砌模型名更能说明工程能力。"
+  }
+]
